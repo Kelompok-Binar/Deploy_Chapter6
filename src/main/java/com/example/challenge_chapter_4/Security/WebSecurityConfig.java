@@ -36,7 +36,7 @@ public class WebSecurityConfig{
                 .requestMatchers("/Film","/Jadwal","/Seats","/Studio",
                         "/Film/Judul-Film/{film_name}","/Film/Tayang","/Film//Jadwal/{film_name}","/Seats/Studios/{studio}/{nomor_kursi}","/swagger-ui/**","/v3/api-docs/**", "https://golden-advice-production.up.railway.app/**").permitAll()
 //                .anyRequest().authenticated().and().httpBasic() formLogin()
-                .and().authorizeHttpRequests().requestMatchers("/Users/**","/Film/**","/Jadwal/**","/Report/**").authenticated().and().httpBasic().and().build();
+                .and().authorizeHttpRequests().requestMatchers("/Users/**","/Film/**","/Jadwal/**","/Report/**", "https://golden-advice-production.up.railway.app/**").authenticated().and().formLogin().and().build();
     }
 
     @Bean
